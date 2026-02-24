@@ -1,9 +1,7 @@
 pipeline {
-    agent {
-        label "agentX"
-    }
+    agent {label "agentX"}
     stages {
-        stage('Test') {
+        stage('Hello') {
             steps {
                 echo "hello from Jenkinsfile"
             }
