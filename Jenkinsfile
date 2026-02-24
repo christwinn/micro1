@@ -1,11 +1,11 @@
 pipeline {
     agent {
-        docker { image 'node:24.13.1-alpine3.23' }
+        label "agentX"
     }
     stages {
         stage('Test') {
             steps {
-                sh 'node --eval "console.log(process.platform,process.env.CI)"'
+                echo "hello from Jenkinsfile"
             }
         }
     }
