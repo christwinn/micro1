@@ -6,5 +6,23 @@ pipeline {
                 echo "hello from Jenkinsfile"
             }
         }
+        stage('fix branch') {
+            when {
+                branch "fix-*"
+            }
+            steps {
+                sh '''
+                    cat README.md
+                '''
+            }
+        }
+        stage('PR branch'){
+            when {
+                branch "PR-*"
+            }
+            steps {
+                echo "only run on PR*"
+            }
+        }
     }
 }
